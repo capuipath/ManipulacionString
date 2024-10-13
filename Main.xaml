@@ -81,13 +81,13 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="976,1822" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1556.0000000000002,1954.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Se recibe una dirección de correo original con algunos espacios y letras mixtas.&#xD;&#xA;Realizar:&#xD;&#xA;-Eliminar espacios al principio y al final&#xD;&#xA;-Convertir todo a minúsculas para normalizar&#xD;&#xA;-Comprobar si el string contiene el símbolo &quot;@&quot;&#xD;&#xA;- Mostrar usuario y dominio&#xD;&#xA;- Agregar al usuario la fecha actual en formato dd/MM/yyyy&#xD;&#xA;-Mostar el nuevo correo" DisplayName="Mani pulacion String" sap:VirtualizedContainerService.HintSize="536,1799" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="Se recibe una dirección de correo original con algunos espacios y letras mixtas.&#xA;Realizar:&#xA;-Eliminar espacios al principio y al final&#xA;-Convertir todo a minúsculas para normalizar&#xA;-Comprobar si el string contiene el símbolo &quot;@&quot;&#xA;- Mostrar usuario y dominio&#xA;- Agregar al usuario la fecha actual en formato dd/MM/yyyy&#xA;-Mostar el nuevo correo" DisplayName="Mani pulacion String" sap:VirtualizedContainerService.HintSize="534.4,1931.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="vStrEmailOriginal" />
       </Sequence.Variables>
@@ -97,7 +97,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="502,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="500.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[vStrEmailOriginal]</OutArgument>
         </Assign.To>
@@ -105,7 +105,7 @@
           <InArgument x:TypeArguments="x:String" xml:space="preserve">["  Usuario.Ejemplo@Correo.COM   "]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Assign - Eliminar espacios al principio y al final - Convertir todo a minúsculas para normalizar" sap:VirtualizedContainerService.HintSize="502,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign DisplayName="Assign - Eliminar espacios al principio y al final - Convertir todo a minúsculas para normalizar" sap:VirtualizedContainerService.HintSize="500.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[vStrEmailOriginal]</OutArgument>
         </Assign.To>
@@ -113,10 +113,10 @@
           <InArgument x:TypeArguments="x:String">[vStrEmailOriginal.TrimStart.TrimEnd.Trim.ToLower]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;Eliminacion de espacion y  convertir en minúsculas la expresion. Email: {0}&quot;,vStrEmailOriginal)]" />
-      <If Condition="[vStrEmailOriginal.Contains(&quot;@&quot;)]" sap:VirtualizedContainerService.HintSize="502,1183" sap2010:WorkflowViewState.IdRef="If_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="500.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;Eliminacion de espacion y  convertir en minúsculas la expresion. Email: {0}&quot;,vStrEmailOriginal)]" />
+      <If Condition="[vStrEmailOriginal.Contains(&quot;@&quot;)]" sap:VirtualizedContainerService.HintSize="500.8,1306.4" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,798" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,919.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="s:String[]" Name="vArrEmail" />
               <Variable x:TypeArguments="x:String" Name="vStrNuevoCorreo" />
@@ -126,7 +126,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:String[]">[vArrEmail]</OutArgument>
               </Assign.To>
@@ -134,9 +134,10 @@
                 <InArgument x:TypeArguments="s:String[]">[vStrEmailOriginal.Split("@"c)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[String.Format(&quot;Usuario: {0}&quot;, vArrEmail(0).ToString)]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Format(&quot;Dominio: {0}&quot;, vArrEmail(1).ToString)]" />
-            <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[String.Format(&quot;Usuario: {0}&quot;, vArrEmail(0).ToString)]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Format(&quot;Dominio: {0}&quot;, vArrEmail(1).ToString)]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="433.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[String.Format(&quot;El usuario es {0}{1}El dominio es {2}&quot;,vArrEmail(0), Environment.NewLine, vArrEmail(1))]" />
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[vStrNuevoCorreo]</OutArgument>
               </Assign.To>
@@ -144,17 +145,17 @@
                 <InArgument x:TypeArguments="x:String">[String.Concat(vArrEmail(0).ToString,DateTime.Now.Day.ToString(),DateTime.Now.Month.ToString(),DateTime.Now.Year.ToString(),"@",vArrEmail(1).ToString)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[vStrEmailOriginal]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[vStrEmailOriginal]" />
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Texto no cumple como correo electronico&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Texto no cumple como correo electronico&quot;]" />
           </Sequence>
         </If.Else>
       </If>
